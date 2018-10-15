@@ -1,0 +1,53 @@
+// Tooltips
+.tooltip {
+  margin-top: map-get($spacers, 2);
+  .arrow {
+    left: 50%;
+    margin-left: -10px;
+  }
+  .tooltip-inner {
+    line-height: 22px;
+    font-size: 14px;
+    @include _shadow-3();
+  }
+}
+
+// Buttons
+.btn {
+  line-height: 18px;
+}
+.btn:not(.btn-link) {
+  @include _shadow-0();
+  transition: all 0.24s ease;
+  &:hover {
+    @include _shadow-2();
+  }
+}
+
+.btn-rounded {
+  border-radius: ($font-size-base*1.5);
+}
+
+// Typography
+
+h1 {
+  @include _typography-h1();
+}
+
+h2 {
+  @include _typography-h2();
+}
+
+h3 {
+  @include _typography-h3();
+}
+
+h4 {
+  @include _typography-h4();
+}
+
+// Bring back old well element
+.well {
+  background-color: $light;
+  padding: map-get($spacers, 2);
+}

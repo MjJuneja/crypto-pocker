@@ -1,0 +1,249 @@
+@import 'ui';
+
+$font-size-nav-link: 14px !default;
+$header-height: 80px !default;
+
+$menu-icon-stroke: 2px;
+$menu-icon-color: #fff;
+$menu-icon-inter-spacing: -10px;
+
+.app-header {
+  color: #fff;
+  height: $header-height;
+  top: 20px;
+  left: 0;
+  right: 0;
+  position: relative;
+  z-index: 10;
+  flex-shrink: 0;
+  @include media-breakpoint-down(md, $grid-breakpoints) {
+    top: 0;
+  }
+
+  .btn-link{
+    color: #fff ;
+    opacity: 1 !important;
+  }
+
+  .bg-head{
+    background-color: $header !important;
+  }
+
+  .nav-link{
+    color: white !important;
+    opacity: 1 !important;
+  }
+
+  &.fixed-top {
+    position: fixed;
+    top: 0px;
+    background-color: $header !important;
+  }
+
+  .language-button {
+    position: absolute;
+    z-index: 1040;
+    right: map-get($spacers, 2);
+    @include _typography-h4();
+    padding: 12px;
+    border-radius: 8px;
+    color: inherit;
+    text-decoration: none;
+    .dropdown-menu.show {
+      display: block;
+      animation: fadeIn 0.16s;
+      background-color: $header-light !important;
+      color: #fff !important;
+    }
+
+    
+
+    .dropdown-menu-right {
+      left: initial;
+      right: 0px;
+    }
+    .dropdown-item {
+      color: white ;
+      padding: map-get($spacers, 1) map-get($spacers, 4);
+      position: relative;
+      &:after {
+        position: absolute;
+        content: 'check';
+        font-family: 'Material Icons';
+        // color: currentColor;
+        color: white !important; 
+        left: map-get($spacers, 2);
+        opacity: 0;
+        transform: translate3d(0px, 0, 0);
+      }
+    }
+
+    .fixed-top{
+      background: #272829 !important;
+    }
+
+    .app-header.navbar-light.fixed-top{
+      background: $header !important;
+    }
+
+    .app-header.navbar-light{
+      background: $header !important;
+    }
+
+    .bg-white{
+      background: $header !important;
+    }
+   
+
+    .dropdown-item:hover{
+      background-color: $header !important;
+      color: white !important 
+    }
+    .dropdown-item.active {
+      background-color: transparent;
+      color: $primary !important;
+      font-weight: $font-weight-bold;
+      &:after {
+        opacity: 1;
+        transform: translate3d(-4px, 0px, 0px);
+      }
+    }
+    .dropdown-toggle {
+      border: none;
+      color: inherit;
+      background: none;
+      font-weight: $font-weight-bold;
+      opacity: 0.5;
+      text-decoration: none;
+    }
+    &:hover .dropdown-toggle {
+      opacity: 1;
+    }
+    @include media-breakpoint-down(md, $grid-breakpoints) {
+      right: 0;
+    }
+  }
+
+  .nav-link {
+    color: #fff;
+    opacity: 0.5;
+    font-size: $font-size-nav-link;
+    font-weight: $font-weight-bold;
+    line-height: 18px;
+    margin: 0 map-get($spacers, 2);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: opacity 0.2s ease;
+    &.disabled {
+      pointer-events: none;
+      opacity: 0.3;
+    }
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .center-icon {
+    font-size: 32px;
+    .nav-link {
+      padding: 0px;
+      width: 48px;
+      height: 48px;
+      opacity: 1;
+    }
+  }
+
+  .menu-icon {
+    width: 48px;
+    height: $menu-icon-stroke;
+    color: $menu-icon-color;
+    background-color: currentColor;
+    display: block;
+    position: relative;
+    &:after,
+    &:before {
+      position: absolute;
+      height: $menu-icon-stroke;
+      background-color: currentColor;
+      left: 0;
+      right: 0;
+      content: '';
+    }
+    &:before {
+      top: $menu-icon-inter-spacing;
+      right: 20%;
+    }
+    &:after {
+      bottom: $menu-icon-inter-spacing;
+      right: 40%;
+    }
+  }
+
+  .logo-on-mobile {
+    position: absolute;
+    right: calc(50% - 20px);
+    @include media-breakpoint-up(lg, $grid-breakpoints) {
+      display: none;
+    }
+  }
+
+  .navbar-toggler {
+    position: absolute;
+    left: map-get($spacers, 2);
+    color: inherit;
+    outline: none;
+    padding-top: 10px;
+    font-size: 32px;
+    margin-left: -1*map-get($spacers, 2);
+  }
+
+  &.mobile-nav-is-open {
+    // background-color: $lighter;
+    background-color: $header;
+  }
+
+  &.navbar-light.fixed-top,
+  &.mobile-nav-is-open {
+    color: $dark;
+    .navbar-toggler {
+      color: $dark;
+      border-color: transparent;
+    }
+
+    .menu-icon {
+      color: $dark;
+    }
+
+    .langauge-button {
+      border-color: $dark;
+      color: $dark;
+    }
+  }
+
+  @include media-breakpoint-down(md, $grid-breakpoints) {
+    .navbar-collapse {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: $header-height;
+      background-color: $light;
+      @include _shadow-2();
+      .nav-item {
+        width: 100%;
+        text-align: center;
+        padding: map-get($spacers, 1) map-get($spacers, 1);
+      }
+    }
+    &:not(.navbar-light) {
+      .navbar-collapse.show {
+        position: absolute;
+        z-index: 1030;
+        top: $header-height;
+        background-color: $light;
+        .nav-link {
+          color: $dark;
+        }
+      }
+    }
+  }
+}

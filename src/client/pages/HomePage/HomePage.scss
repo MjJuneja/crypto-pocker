@@ -1,0 +1,661 @@
+@import 'ui';
+
+$page-section-title-color: #b3b3b3;
+
+// Email Subscription
+#mc_embed_signup,
+#mc-embedded-subscribe-form {
+  width: 100%;
+}
+
+.home-page {
+  position: relative;
+  .appstore-icon {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 16px;
+    min-width: 160px;
+    @include _shadow-0();
+    transition: all 0.2s ease;
+    &:hover {
+      @include _shadow-2();
+    }
+    .appstore-img {
+      max-height: 100%;
+    }
+    @include media-breakpoint-down(xs, $grid-breakpoints) {
+      min-width: 150px;
+      justify-content: flex-start;
+      &:nth-child(2n) {
+        justify-content: flex-end;
+      }
+    }
+  }
+  .page-section {
+    padding-top: map-get($spacers, 5);
+    padding-bottom: map-get($spacers, 5);
+    .section-title {
+      color: $page-section-title-color;
+      font-size: 16px;
+      letter-spacing: 2px;
+      line-height: 19px;
+      font-weight: $font-weight-bold;
+    }
+  }
+  .tooltip {
+    z-index: 10;
+  }
+  .app-header.fixed-top {
+    animation: fadeInDown 0.24s;
+    @include _shadow-2();
+  }
+  .app-header.fixed-top + .container {
+    margin-top: $header-height;
+  }
+}
+
+// Hero Section
+.home-page {
+  .top-parallax-section {
+    height: calc(100vh + 70px);
+    color: #fff;
+    @include media-breakpoint-down(md, $grid-breakpoints) {
+      height: calc(100vh + 70px + 100px);
+    }
+  }
+
+  .ui-parallax-background {
+    // background-color: $primary;
+    background-image: url('/public/img/background.png');
+  }
+  .hero-subtitle {
+    opacity: 0.5;
+  }
+  .hero-image {
+    max-height: 60vh;
+    position: absolute;
+    right: 0;
+    object-position: center;
+  }
+  .hero-subscribe-btn {
+    color: $primary;
+    background-color: $lighter;
+    @include media-breakpoint-down(md, $grid-breakpoints) {
+      margin-top: 16px;
+    }
+  }
+  .hero-email-input {
+    outline: none;
+    @include media-breakpoint-up(md, $grid-breakpoints) {
+      margin-right: map-get($spacers, 2);
+    }
+  }
+  .subscription-form {
+    position: relative;
+  }
+  .subscription-message {
+    animation: fadeIn 0.24s ease;
+    margin-top: 16px;
+    > a {
+      color: #fff;
+      display: block;
+    }
+    &.is-success {
+      color: $success;
+    }
+    &.is-error {
+      color: #ffb4b4;
+    }
+    // @include media-breakpoint-up(md, $grid-breakpoints) {
+    //   padding-left: 30px;
+    // }
+    // @include media-breakpoint-down(md, $grid-breakpoints) {
+    //   margin-top: 16px;
+    // }
+  }
+  .seen-on-section {
+    background-color: #272829;
+    // display: flex;
+  }
+
+  // .seen-on-icons{
+  //   display:flex;
+  // }
+
+  .seen-on-img {
+    width:100%;
+    display: block;
+    height: auto;
+    // background-color: #fff;
+    // padding-left:25px;
+    // padding-right:25px;
+    // margin-top: 15px;
+    // margin-bottom: 15px;
+    // height: 80px;
+    // overflow: hidden;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+  }
+  // .seen-on-img {
+  //   max-height: 100%;
+  //   object-fit: contain;
+  //   object-position: center center;
+  // }
+}
+
+.home-page .hero-bottom-wrapper {
+  min-height: 96px;
+  margin-bottom: 60px;
+  user-select: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: inherit;
+  text-decoration: none;
+  flex-wrap: wrap;
+
+  h3 {
+    line-height: 33px;
+    margin-bottom: 0;
+  }
+  p {
+    line-height: 22px;
+    margin-bottom: 0;
+  }
+}
+
+// About Section
+.home-page .about-section {
+  text-align: center;
+  .about-video-container {
+    @include _shadow-2();
+  }
+}
+
+.with-line{
+  width:100%;
+  text-align:center; 
+  border-bottom: 1px solid #fff; 
+  line-height:0.1em !important; 
+  margin:10px 0 20px;
+}
+
+.with-line span{
+  background:#272829;
+  color: #fff; 
+  padding:0 15px;
+}
+
+.ICO-line{
+  width:100%;
+  text-align:center; 
+  border-bottom: 1px solid #fff; 
+  line-height:0.1em !important; 
+  margin:10px 0 20px;
+}
+
+.logos{
+    margin-top: 20px;
+    padding-top: 50px;
+    margin-bottom: -26px;
+}
+
+.ICO-line span{
+  background: rgb(51, 86, 250);
+  color: #fff; 
+  padding:0 15px;
+}
+
+.team-span-bg{
+  background: #2d2d2d !important;
+}
+
+
+#features-section{
+  color: white;
+}
+
+#milestone-section{
+  color: white;
+}
+
+.milestone-stamp{
+  color: white;
+}
+
+.member-description{
+  color: white !important;
+}
+
+.team-bg{
+  background: #2d2d2d !important;
+}
+#team-section,#about-section,#faq-section{
+  color: #fff;
+}
+
+
+
+@media (max-width: 992px){
+.app-header .navbar-collapse {
+  background-color: $header !important;
+}
+
+.menu-icon{
+color: white !important;
+}
+}
+
+.teams-box{
+  color: #fff !important;
+}
+
+
+.bounty-section{
+  color: red;
+}
+
+.home-page .features-section {
+  position: relative;
+  .feature-section-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-image: url('/public/img/static_wave.svg');
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: 120% auto;
+  }
+
+  .feature-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    padding: map-get($spacers, 3) map-get($spacers, 5);
+    &:after,
+    &:before {
+      position: absolute;
+      content: '';
+      background-color: #979797;
+    }
+    @include media-breakpoint-down(sm, $grid-breakpoints) {
+      padding-left: map-get($spacers, 2);
+      padding-right: map-get($spacers, 2);
+      &:after,
+      &:before {
+        display: none;
+      }
+    }
+
+    &.feature-item-1 {
+      &:after {
+        bottom: 0;
+        right: 0;
+        height: 72px;
+        width: 1px;
+      }
+      &:before {
+        bottom: 0;
+        right: 0;
+        width: 50%;
+        height: 1px;
+      }
+    }
+
+    &.feature-item-2 {
+      &:before {
+        bottom: 0;
+        left: 0;
+        width: 50%;
+        height: 1px;
+      }
+    }
+
+    &.feature-item-3 {
+      &:before {
+        top: -1px;
+        right: 0;
+        width: 50%;
+        height: 1px;
+      }
+      &:after {
+        top: 0;
+        right: 0;
+        width: 1px;
+        height: 72px;
+      }
+    }
+
+    &.feature-item-5 {
+      &:before {
+        top: -1px;
+        left: 0;
+        width: 50%;
+        height: 1px;
+      }
+      &:after {
+        top: 0;
+        left: 0;
+        width: 1px;
+        height: 72px;
+      }
+    }
+  }
+  .feature-icon-container {
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    margin-bottom: map-get($spacers, 3);
+    background-color: rgba($primary, 0.06);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .feature-icon-img {
+      max-width: 100%;
+      width: 48px;
+    }
+  }
+
+  .feature-title {
+    color: #666;
+    font-size: 18px;
+    margin-bottom: map-get($spacers, 3);
+  }
+
+  // Download buttons
+  .download-buttons {
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .material-icons {
+      font-size: 24px;
+    }
+    @include media-breakpoint-up(md, $grid-breakpoints) {
+      .btn {
+        &:nth-child(2) {
+          margin: 0 map-get($spacers, 3);
+        }
+      }
+    }
+    @include media-breakpoint-down(sm, $grid-breakpoints) {
+      .btn {
+        margin: map-get($spacers, 2) map-get($spacers, 2);
+      }
+    }
+  }
+}
+
+// ICO Section
+.home-page .ico-section {
+  color: #fff;
+  background-color: $primary;
+  font-weight: $font-weight-light;
+  .section-title {
+    font-size: 48px;
+    line-height: 56px;
+  }
+  .content-title,
+  .section-title {
+    color: #fff;
+  }
+  .content-title {
+    font-weight: $font-weight-bold;
+    font-size: 18px;
+  }
+  .info-chart-container {
+    margin-top: 48px;
+    margin-bottom: 48px;
+  }
+  .ico-buttons .btn {
+    white-space: normal;
+    height: auto;
+    max-height: initial;
+  }
+  .btn {
+    position: relative;
+    &.btn-primary {
+      text-align: left;
+      padding-left: 70px;
+      background-color: rgba(#fff, 0.1);
+    }
+    .circle-icon {
+      position: absolute;
+      left: 30px;
+      width: 18px;
+      height: 18px;
+      border-radius: 18px;
+    }
+    .icon-cyan {
+      background-color: #2ac7e9;
+    }
+    .icon-red {
+      background-color: #ff3232;
+    }
+  }
+
+  .info-card {
+    background-color: #fff;
+    height: 280px;
+    box-shadow: 0 0 10px 30px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: flex;
+    padding: map-get($spacers, 2) map-get($spacers, 3);
+    flex-direction: column;
+    text-align: center;
+    color: #808080;
+    .info-content {
+      flex: 1;
+    }
+    .info-cap {
+      border-top: 1px $primary solid;
+      padding: 24px 0;
+    }
+    .info-button {
+      padding: 6px 16px;
+    }
+    .cap-title,
+    .cap-type {
+      line-height: 19px;
+      font-size: 16px;
+    }
+    .info-title {
+      font-size: 18px;
+      line-height: 30px;
+      font-weight: $font-weight-bold;
+      margin-bottom: 12px;
+    }
+  }
+}
+
+// Milestone section
+.home-page .milestone-section {
+  .milestone-stamp {
+    position: absolute;
+    bottom: -30px;
+    color: $dark;
+  }
+  .milestone-count {
+    height: 48px;
+    font-size: 28px;
+    text-align: center;
+    padding-top: 10px;
+    width: 48px;
+    background-color: rgba(#000, 0.1);
+    border-radius: 48px;
+    margin: 0 18px;
+    flex-shrink: 0;
+    flex-grow: 0;
+  }
+
+  .milestone-item {
+    display: inline-block;
+    position: relative;
+    min-height: 70px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    padding: 10px 0;
+    margin-bottom: 30px;
+    @include _shadow-2();
+    &:after {
+      position: absolute;
+      content: '';
+      height: 30px;
+      top: -30px;
+      width: 5px;
+      background-color: $primary;
+    }
+    &.is-done:after {
+      background-color: $success;
+    }
+  }
+
+  .milestone-item-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    width: calc(50% + 40px);
+    overflow: visible;
+    min-height: 100px;
+
+    &:first-child .milestone-item:after {
+      display: none;
+    }
+
+    &.in-right {
+      margin-left: calc(50% - 40px);
+      justify-content: flex-start;
+      .milestone-title {
+        padding-right: 24px;
+      }
+      .milestone-stamp {
+        right: 4px;
+      }
+      .milestone-item:after {
+        left: 35px;
+      }
+    }
+
+    &:not(.in-right) {
+      .milestone-item:after {
+        right: 40px;
+      }
+      .milestone-count {
+        order: 2;
+      }
+      .milestone-stamp {
+        left: 4px;
+      }
+      .milestone-title {
+        order: 1;
+        padding-left: 24px;
+      }
+    }
+  }
+}
+
+// Team Section
+.home-page .team-section {
+  .teams-box {
+    background-color: #fff;
+    @include _shadow-3();
+
+    .section-title {
+      width: 100%;
+    }
+  }
+  .teambox-title {
+    font-size: 48px;
+    font-weight: $font-weight-bold;
+    line-height: 58px;
+  }
+  .team-member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .member-avatar {
+    height: 128px;
+    width: 128px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  .member-img {
+    max-width: 100%;
+    object-fit: cover;
+    object-position: center center;
+  }
+  .member-name {
+    color: #4d4d4d;
+    font-size: 24px;
+  }
+  .member-designation {
+    font-size: 12px;
+    color: #b3b3b3;
+  }
+  .member-description {
+    font-size: 12px;
+    color: #b3b3b3;
+  }
+  .member-link {
+    color: #b3b3b3;
+    font-size: 16px;
+    &:hover {
+      color: $primary;
+    }
+  }
+}
+
+.home-page .faq-section {
+
+  // .content-row + .content-row {
+  //   border-top: 1px $dark solid;
+  // }
+  // .info-block {
+  //   padding: 40px 15px;
+  //   &:not(:first-child) {
+  //     border-left: 1px $dark solid;
+  //   }
+  // }
+  .info-title,
+  .info-subtitle {
+    margin-bottom: map-get($spacers, 1);
+  }
+  .info-title {
+    font-size: 24px;
+    margin-bottom: map-get($spacers, 3);
+  }
+  .info-subtitle {
+    font-weight: $font-weight-bold;
+  }
+  .dhidden{
+    display: none;
+  }
+  .description {
+    display: block;
+    padding-left: 15px;
+  }
+  @include media-breakpoint-down(sm, $grid-breakpoints) {
+    .info-block {
+      border-bottom: 1px $dark solid;
+      margin-left: map-get($spacers, 2);
+      margin-right: map-get($spacers, 2);
+      &:not(:first-child) {
+        border-left: none;
+      }
+    }
+    .content-row + .content-row {
+      border-top: none;
+    }
+  }
+}

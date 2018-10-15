@@ -1,0 +1,12 @@
+$avatar-size = 48px
+$avatar-size-lg = 128px
+$avatar-size-sm = 32px
+
+:local(.container)
+  color inherit
+  size $avatar-size $avatar-size
+  
+  &.is-sm
+    size $avatar-size-sm $avatar-size-sm
+  &.is-lg
+    size $avatar-size-lg $avatar-size-lg

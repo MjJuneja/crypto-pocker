@@ -1,0 +1,114 @@
+@import 'ui';
+@import '~bootstrap/scss/bootstrap';
+@import './custom-bootstrap.scss';
+
+body {
+  // background-color: $body-bg;
+  background-color: $header;
+  color: $dark;
+  position: relative;
+  overflow-y: auto;
+  overflow-x: hidden;
+  @include _typography-p();
+}
+
+.flex-vertical {
+  display: flex;
+  flex-direction: column;
+}
+.flex-horizontal {
+  display: flex;
+  flex-direction: row;
+}
+.vertical-on-mobile {
+  @include media-breakpoint-down(sm, $grid-breakpoints) {
+    flex-direction: column;
+  }
+}
+
+.fill,
+.flex-1 {
+  flex: 1;
+}
+.flex-2 {
+  flex: 2;
+}
+.flex-3 {
+  flex: 3;
+}
+.flex-4 {
+  flex: 4;
+}
+.flex-5 {
+  flex: 5;
+}
+.flex-6 {
+  flex: 6;
+}
+.flex-7 {
+  flex: 7;
+}
+
+.page-container {
+  min-height: 100vh;
+}
+
+.page-layer {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.bg {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.section-title-underlined {
+  margin-bottom: map-get($spacers, 5);
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: (-1 * map-get($spacers, 3));
+    height: 2px;
+    background-color: $dark;
+    width: map-get($spacers, 4);
+  }
+  &:not(:first-child) {
+    margin-top: map-get($spacers, 4);
+  }
+  &.underline-center {
+    &:after {
+      left: 50%;
+      margin-left: map-get($spacers, 2)*-1;
+    }
+  }
+}
+
+.btn-responsive {
+  font-size: $font-size-base;
+
+  @include media-breakpoint-up(md, $grid-breakpoints) {
+    font-size: $font-size-base*2;
+  }
+
+  @include media-breakpoint-up(sm, $grid-breakpoints) {
+    padding: map-get($spacers, 2) map-get($spacers, 3);
+  }
+  @include media-breakpoint-only(sm, $grid-breakpoints) {
+    padding: map-get($spacers, 1) map-get($spacers, 2);
+  }
+  @include media-breakpoint-only(xs, $grid-breakpoints) {
+    padding: (map-get($spacers, 1)*0.5) map-get($spacers, 2);
+  }
+}
+
+.no-pointer-events {
+  pointer-events: none;
+}

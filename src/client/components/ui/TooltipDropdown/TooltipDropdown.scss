@@ -1,0 +1,63 @@
+@import 'ui';
+
+:local(.container) {
+  .ui-tooltip-dropdown-btn {
+    background-color: rgba($dark, 0.07);
+    text-decoration: none;
+    font-weight: inherit;
+    .icon {
+      margin-left: map-get($spacers, 2);
+    }
+  }
+
+  .ui-tooltip-dropdown-item {
+    padding: 4px 16px;
+    opacity: 0.8;
+    cursor: pointer;
+    &:hover,
+    &:active {
+      background-color: $light;
+      opacity: 1;
+    }
+  }
+
+  .ui-tooltip-dropdown-menu {
+    position: static;
+    opacity: 0;
+    margin-top: 0;
+    right: 0;
+    top: 40px;
+    padding-top: map-get($spacers, 3);
+    will-change: opacity, transform;
+    transform: translate3d(0, -12px, 0);
+    transition: transform 0.24s ease, opacity 0.24s ease;
+    opacity: 1;
+    transform: translate3d(0, 0px, 0);
+    &:hover {
+      transform: translate3d(0, 0px, 0);
+    }
+  }
+
+  .bs-tooltip-bottom .arrow {
+    top: 22px;
+    left: initial;
+    right: 40px;
+  }
+
+  .ui-tooltip-dropdown-btn {
+    &:hover + .ui-tooltip-dropdown-menu,
+    &:focus + .ui-tooltip-dropdown-menu {
+      opacity: 1;
+      transform: translate3d(0, 0px, 0);
+    }
+  }
+
+  @include media-breakpoint-down(md, $grid-breakpoints) {
+    .ui-tooltip-dropdown-menu {
+      padding-top: map-get($spacers, 1);
+      .arrow {
+        display: none;
+      }
+    }
+  }
+}
